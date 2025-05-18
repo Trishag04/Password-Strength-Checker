@@ -1,4 +1,4 @@
-🔐 # **Password Strength Checker**
+# 🔐 **Password Strength Checker**
 
 🧾 # Overview
 This is a 💻 web application that checks the strength of a password in real-time and provides feedback to the user.
