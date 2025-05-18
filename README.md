@@ -1,38 +1,38 @@
 # 🔐 **Password Strength Checker**
 
-🧾 # Overview
+## 🧾 Overview
 This is a 💻 web application that checks the strength of a password in real-time and provides feedback to the user.
 
-✨ # Features
-      ⚡ Real-time Password Check: Evaluates password strength as the user types.
-      🧠 Strength Evaluation: Checks for:
-      🔢 Minimum length (8 characters)
-      🔠 Uppercase letters
-      🔡 Lowercase letters
-      🔢 Numbers
-      🔣 Special characters
+## ✨ Features
+  ⚡ Real-time Password Check: Evaluates password strength as the user types.
+  🧠 Strength Evaluation: Checks for:
+  🔢 Minimum length (8 characters)
+  🔠 Uppercase letters
+  🔡 Lowercase letters
+  🔢 Numbers
+  🔣 Special characters
 
-🎨 # Visual Feedback: 
-      Displays a color-coded strength bar:
-                    Weak
-                    Medium
-                    Strong
+## 🎨 Visual Feedback: 
+Displays a color-coded strength bar:
+    Weak
+    Medium
+    Strong
 
-💡# Suggestions: 
-      Provides a list of criteria that the password does not meet.
+## 💡 Suggestions: 
+Provides a list of criteria that the password does not meet.
 
-🖥️# User-Friendly Interface:
-      Clean and simple design.
+## 🖥️ User-Friendly Interface:
+ Clean and simple design.
 
-🛠️ # Technologies Used
-        **Frontend:**
-          🌐 HTML
-          🎨 CSS
-         **Backend:**
-          🐍 Python
-          🌶️ Flask
+## 🛠️ Technologies Used
+  **Frontend:**
+  🌐 HTML
+  🎨 CSS
+ **Backend:**
+  🐍 Python
+  🌶️ Flask
 
-⚙️ # Setup
+## ⚙️ Setup
 1. Clone the repository:
 
         git clone https://github.com/your-username/your-repository-name.git
@@ -60,14 +60,14 @@ This is a 💻 web application that checks the strength of a password in real-ti
 6. Open in your browser:
   🌐 Go to http://127.0.0.1:5000
 
-👨‍💻# Usage
+## 👨‍💻 Usage
 1. 🔏 Enter your password: Type your password into the input field.
 2. ✅ Check the strength: Evaluated in real-time.
 3. 🧾 View feedback:
        -📊 A colored bar indicates strength.
        -📋 Suggestions to improve your password.
 
-📁 # File Structure
+## 📁 File Structure
 
 ├── app.py         # Flask backend
 ├── index.html     # HTML frontend
