@@ -70,7 +70,9 @@ Provides a list of criteria that the password does not meet.
 ## 📁 File Structure
 
 ├── app.py         # Flask backend
-├── index.html     # HTML frontend
+
+├── index.html  # HTML frontend
+
 └── venv/          # Virtual environment (optional)
 
 
