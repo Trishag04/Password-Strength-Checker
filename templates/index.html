@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Strength Checker</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+}
+
+
+        .container {
+            max-width: 600px;
+            margin: 8% auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #6c5ce7;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            text-align: center;
+            color: #636e72;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 2px solid #dfe6e9;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .bar {
+            width: 100%;
+            height: 12px;
+            background: #dfe6e9;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .strength {
+            height: 100%;
+            transition: 0.3s ease;
+            background-color: #b2bec3;
+        }
+
+        .feedback {
+            font-size: 0.9rem;
+            color: #2d3436;
+            background-color: #ffeaa7;
+            border-left: 5px solid #fdcb6e;
+            padding: 0.8rem;
+            border-radius: 8px;
+            line-height: 1.5;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🔐 Password Strength Checker</h2>
+        <p>Strong passwords protect your data from unauthorized access. Keep it secure!</p>
+        <input type="password" id="password" placeholder="Enter your password..." oninput="checkPassword()" />
+        <div class="bar"><div id="strengthBar" class="strength"></div></div>
+        <div class="feedback" id="feedback"></div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const strengthBar = document.getElementById("strengthBar");
+            const feedback = document.getElementById("feedback");
+
+            // Criteria for password strength check
+            const weakCriteria = [
+                { regex: /[a-z]/, message: "Include lowercase letters" },
+                { regex: /[A-Z]/, message: "Include uppercase letters" },
+                { regex: /[0-9]/, message: "Include numbers" },
+                { regex: /[!@#$%^&*(),.?":{}|<>]/, message: "Include special characters" },
+                { regex: /.{8,}/, message: "Password must be at least 8 characters long" }
+            ];
+
+            const strengthLevels = ["Weak", "Medium", "Strong"];
+            let strength = 0;
+            let suggestions = [];
+
+            // Check password strength and build suggestions
+            weakCriteria.forEach((criteria) => {
+                if (!criteria.regex.test(password)) {
+                    suggestions.push(criteria.message);
+                } else {
+                    strength++;
+                }
+            });
+
+            // Set the color of the bar based on strength level
+            const pastelColors = ["#fab1a0", "#ffeaa7", "#81ecec", "#a29bfe", "#55efc4"];
+            strengthBar.style.width = (strength * 20) + "%";
+            strengthBar.style.backgroundColor = pastelColors[strength] || "#dfe6e9";
+
+            // Display feedback
+            if (strength === 5) {
+                feedback.innerHTML = `<span style="color:green;">✅ Strong password!</span>`;
+            } else {
+                const listItems = suggestions.map(f => `<li>${f}</li>`).join("");
+                feedback.innerHTML = `<strong>Suggestions:</strong><ul>${listItems}</ul>`;
+            }
+        }
+    </script>
+</body>
+</html>
